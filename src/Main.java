@@ -34,23 +34,37 @@ public class Main {
 //                dog.getClass().getSimpleName() + " is a subclass of " + dog.getClass().getSuperclass().getSimpleName()
 //        );
 
-        Persona persona1 = new Persona("John Doe", 30);
-        Persona persona2 = new Persona("Jane Smith", 25);
-        Persona persona3 = new Persona("John Doe", 30);
+//
 
-        // Utilizar el método toString()
-        System.out.println(persona1.toString()); // Salida: Persona [nombre=John Doe, edad=30]
+    // pedir datos del estudiante por consola
 
-        // Utilizar el método equals()
-        System.out.println("persona1 equals persona2: " + persona1.equals(persona2)); // Salida: false
-        System.out.println("persona1 equals persona3: " + persona1.equals(persona3)); // Salida: true
+    Scanner scanner = new Scanner(System.in);
 
-        // Utilizar el método hashCode()
-        System.out.println("persona1 hashCode: " + persona1.hashCode()); // Salida: hashCode único para persona1
-        System.out.println("persona2 hashCode: " + persona2.hashCode()); // Salida: hashCode único para persona2
+    System.out.print("Ingrese el nombre del estudiante: ");
+    String nombre = scanner.nextLine();
+
+    System.out.print("Ingrese la edad del estudiante: ");
+    int edad = scanner.nextInt();
+    scanner.nextLine(); // Consumir el salto de línea
+
+    System.out.print("Ingrese la dirección del estudiante: ");
+    String direccion = scanner.nextLine();
+
+    System.out.print("Ingrese el ID del estudiante: ");
+    String idDeEstudiante = scanner.nextLine();
+
+    System.out.print("Ingrese la calificación del estudiante: ");
+    double calificacion = scanner.nextDouble();
+
+    // crear instancia de la clase Estudiante
+    Estudiante estudiante = new Estudiante(nombre, edad, direccion, idDeEstudiante, calificacion);
+
+    // imprimir datos del estudiante
+    estudiante.imprimirDatos();
 
 
-
+    // cerrar el scanner para evitar fugas de memoria
+        scanner.close();
 
     }
 

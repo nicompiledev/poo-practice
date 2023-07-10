@@ -1,31 +1,40 @@
 class Persona {
     private String nombre;
     private int edad;
+    private String direccion;
 
-    public Persona(String nombre, int edad) {
+    // Constructor
+    public Persona(String nombre, int edad, String direccion) {
         this.nombre = nombre;
+        this.edad = edad;
+        this.direccion = direccion;
+    }
+
+    // Getters y Setters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
         this.edad = edad;
     }
 
-    @Override
-    public String toString() {
-        return "Persona [nombre=" + nombre + ", edad=" + edad + "]";
+    public String getDireccion() {
+        return direccion;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        Persona otraPersona = (Persona) obj;
-        return nombre.equals(otraPersona.nombre) && edad == otraPersona.edad;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
-    @Override
-    public int hashCode() {
-        return nombre.hashCode() + edad;
-    }
+
+
 }
