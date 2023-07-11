@@ -36,37 +36,69 @@ public class Main {
 
 //
 
-    // pedir datos del estudiante por consola
+//    // pedir datos del estudiante por consola
+//
+//    Scanner scanner = new Scanner(System.in);
+//
+//    System.out.print("Ingrese el nombre del estudiante: ");
+//    String nombre = scanner.nextLine();
+//
+//    System.out.print("Ingrese la edad del estudiante: ");
+//    int edad = scanner.nextInt();
+//    scanner.nextLine(); // Consumir el salto de línea
+//
+//    System.out.print("Ingrese la dirección del estudiante: ");
+//    String direccion = scanner.nextLine();
+//
+//    System.out.print("Ingrese el ID del estudiante: ");
+//    String idDeEstudiante = scanner.nextLine();
+//
+//    System.out.print("Ingrese la calificación del estudiante: ");
+//    double calificacion = scanner.nextDouble();
+//
+//    // crear instancia de la clase Estudiante
+//    Estudiante estudiante = new Estudiante(nombre, edad, direccion, idDeEstudiante, calificacion);
+//
+//    // imprimir datos del estudiante
+//    estudiante.imprimirDatos();
+//
+//
+//    // cerrar el scanner para evitar fugas de memoria
+//        scanner.close();
+//
+//    }
 
-    Scanner scanner = new Scanner(System.in);
-
-    System.out.print("Ingrese el nombre del estudiante: ");
-    String nombre = scanner.nextLine();
-
-    System.out.print("Ingrese la edad del estudiante: ");
-    int edad = scanner.nextInt();
-    scanner.nextLine(); // Consumir el salto de línea
-
-    System.out.print("Ingrese la dirección del estudiante: ");
-    String direccion = scanner.nextLine();
-
-    System.out.print("Ingrese el ID del estudiante: ");
-    String idDeEstudiante = scanner.nextLine();
-
-    System.out.print("Ingrese la calificación del estudiante: ");
-    double calificacion = scanner.nextDouble();
-
-    // crear instancia de la clase Estudiante
-    Estudiante estudiante = new Estudiante(nombre, edad, direccion, idDeEstudiante, calificacion);
-
-    // imprimir datos del estudiante
-    estudiante.imprimirDatos();
+        // pedir datos del manager por consola
 
 
-    // cerrar el scanner para evitar fugas de memoria
-        scanner.close();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese el nombre del manager: ");
+        String nombre = scanner.nextLine();
+
+        System.out.print("Ingrese el id del manager: ");
+        String idEmpleado = scanner.nextLine();
+
+        System.out.print("Ingrese el salario del manager: ");
+        double salario = scanner.nextDouble();
+        scanner.nextLine(); // Consumir el salto de línea
+
+        System.out.print("Ingrese el departamento al que pertenece el manager: ");
+        String departamento = scanner.nextLine();
+
+
+        System.out.print("Indique si el manager puede despedir o no: ");
+        String respuesta = scanner.nextLine();
+        boolean puedeDespedir = respuesta.equalsIgnoreCase("si");
+
+        // crear instancia de la clase Manager
+        Manager manager = new Manager(nombre, idEmpleado, salario, departamento, puedeDespedir);
+
+        // imprimir datos del manager
+        manager.imprimirDatos();
 
     }
+
+
 
 
 
