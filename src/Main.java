@@ -68,37 +68,53 @@ public class Main {
 //
 //    }
 
-        // pedir datos del manager por consola
-
-
+//        // pedir datos del manager por consola
+//
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Ingrese el nombre del manager: ");
+//        String nombre = scanner.nextLine();
+//
+//        System.out.print("Ingrese el id del manager: ");
+//        String idEmpleado = scanner.nextLine();
+//
+//        System.out.print("Ingrese el salario del manager: ");
+//        double salario = scanner.nextDouble();
+//        scanner.nextLine(); // Consumir el salto de línea
+//
+//        System.out.print("Ingrese el departamento al que pertenece el manager: ");
+//        String departamento = scanner.nextLine();
+//
+//
+//        System.out.print("Indique si el manager puede despedir o no: ");
+//        String respuesta = scanner.nextLine();
+//        boolean puedeDespedir = respuesta.equalsIgnoreCase("si");
+//
+//        // crear instancia de la clase Manager
+//        Manager manager = new Manager(nombre, idEmpleado, salario, departamento, puedeDespedir);
+//
+//        // imprimir datos del manager
+//        manager.imprimirDatos();
+//
+//    }
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese el nombre del manager: ");
-        String nombre = scanner.nextLine();
+        System.out.print("Ingrese una palabra para imprimirla letra por letra: ");
 
-        System.out.print("Ingrese el id del manager: ");
-        String idEmpleado = scanner.nextLine();
+        String palabra = scanner.nextLine();
 
-        System.out.print("Ingrese el salario del manager: ");
-        double salario = scanner.nextDouble();
-        scanner.nextLine(); // Consumir el salto de línea
+        // usando for each
+        char[] letras = palabra.toCharArray();
+        for (char letra : letras) {
+            System.out.println(letra);
+        }
 
-        System.out.print("Ingrese el departamento al que pertenece el manager: ");
-        String departamento = scanner.nextLine();
+        // usando for loop
+        for (int i = 0; i < palabra.length(); i++) {
+            System.out.println(palabra.charAt(i));
+        }
 
-
-        System.out.print("Indique si el manager puede despedir o no: ");
-        String respuesta = scanner.nextLine();
-        boolean puedeDespedir = respuesta.equalsIgnoreCase("si");
-
-        // crear instancia de la clase Manager
-        Manager manager = new Manager(nombre, idEmpleado, salario, departamento, puedeDespedir);
-
-        // imprimir datos del manager
-        manager.imprimirDatos();
 
     }
-
-
 
 
 
