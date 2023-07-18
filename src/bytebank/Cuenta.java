@@ -1,16 +1,26 @@
 package bytebank;
 
 public class Cuenta {
-    double saldo;
-    int agencia;
-    int numero;
-    String titular;
+     private double saldo;
+     private int agencia;
+    private int numero;
+    private Cliente titular;
 
-    public void deposita(double valor) {
-        this.saldo = this.saldo + valor;
+    private static int totalCuentas;
+
+    public Cuenta(int agencia, int numero) {
+        Cuenta.totalCuentas++;
+        System.out.println("El total de cuentas es: " + Cuenta.totalCuentas);
+        this.agencia = agencia;
+        this.numero = numero;
+        System.out.println("Estoy creando una cuenta " + this.numero);
     }
 
-    public boolean saca(double valor) {
+    public void deposita(double valor) {
+        this.saldo += valor;
+    }
+
+    public boolean retira(double valor) {
         if(this.saldo >= valor) {
             this.saldo -= valor;
             return true;
@@ -27,5 +37,40 @@ public class Cuenta {
         } else {
             return false;
         }
+    }
+
+    public double getSaldo() {
+        return this.saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo += saldo;
+    }
+
+    public int getAgencia() {
+        return this.agencia;
+    }
+
+    public void setAgencia(int agencia) {
+        this.agencia = agencia;
+    }
+
+    public int getNumero() {
+        return this.numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public Cliente getTitular() {
+        return titular;
+    }
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
+    }
+
+    public static int getTotalCuentas() {
+        return Cuenta.totalCuentas;
     }
 }
